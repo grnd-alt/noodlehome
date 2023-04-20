@@ -1,0 +1,20 @@
+scalar UUID
+
+type User{
+    username: String!,
+    id: UUID!,
+    email: String!,
+    passwordHash: String!,
+    usernameMail: String!
+}
+
+type Query {
+    users: [User],
+    getUserByUsername(username: String!): [User],
+    getSpotifyToken(clientAuthToken: String!): String!
+
+}
+
+type Mutation{
+    createUser(username: String!): [User]
+}

@@ -1,0 +1,6 @@
+./dist
+src/database/environment
+dist/database/environment
+src/private
+node_modules
+dist

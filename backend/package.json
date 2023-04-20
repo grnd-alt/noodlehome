@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generateFromSchema": "graphql-codegen --config codegen.yml",
+    "compile": "rimraf dist && graphql-codegen --config codegen.yml && tsc",
+    "startAfterBuild": "npm run compile && node ./dist/index.js",
+    "start": "npm run generateFromSchema & npm run compile & node ./dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.6.0",
+    "@graphql-tools/mock": "^8.7.19",
+    "@graphql-tools/schema": "^9.0.17",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "graphql-scalars": "^1.21.3",
+    "graphql-tag": "^2.12.6",
+    "node-fetch": "^3.3.1",
+    "pg": "^8.10.0",
+    "querystring": "^0.2.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.14",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^3.3.0",
+    "@graphql-codegen/typescript": "^3.0.3",
+    "@graphql-codegen/typescript-resolvers": "^3.2.0",
+    "@types/cors": "^2.8.13"
+  }
+}
